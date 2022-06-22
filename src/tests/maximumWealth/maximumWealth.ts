@@ -2,7 +2,10 @@ const maximumWealth = (accounts: number[][]): number => {
   const arr: number[] = [];
 
   if (accounts.flat().length) {
-    accounts.forEach((account) => (
+    const notEmptyAccounts = accounts
+      .filter((account) => account.length !== 0);
+
+    notEmptyAccounts.forEach((account) => (
       arr.push(account.reduce((a, b) => a + b))
     ));
 
