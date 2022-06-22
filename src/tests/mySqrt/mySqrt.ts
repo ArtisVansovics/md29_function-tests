@@ -1,15 +1,18 @@
 const mySqrt = (x: number): number => {
+  if (x < 0) return NaN;
+
   let n = 0;
-  let m = x / 2;
+  let m = x;
 
-  do {
-    n = m;
-    m = (n + (x / n)) / 2;
-  } while (n !== m);
+  while (n <= m) {
+    const o = Math.floor((n + m) / 2);
 
-  const splitNumber = n.toString().split('.');
+    if (o * o > x) {
+      m = o - 1;
+    } else n = o + 1;
+  }
 
-  return Number(splitNumber[0]);
+  return m;
 };
 
 export default mySqrt;
