@@ -1,6 +1,6 @@
 const numberOfSteps = (num: number): number => {
   let i = 0;
-  let n = num;
+  let n = Math.abs(num);
 
   while (n > 0) {
     if (n % 2 === 0) {
