@@ -1,7 +1,9 @@
 const lengthOfLastWord = (s: string): number => {
   const filteredWords = s.split(' ').filter((word) => word !== '');
 
-  return filteredWords[filteredWords.length - 1].length;
+  if (filteredWords.length) {
+    return filteredWords[filteredWords.length - 1].length;
+  } return 0;
 };
 
 export default lengthOfLastWord;
